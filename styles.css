@@ -1,0 +1,281 @@
+body {
+    background-color: #2F4F4F;
+}
+
+#titles-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.slideshow {
+    margin-top: 100px;
+}
+
+.description {
+    color: #2B0C0C;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+.description-link {
+    margin-top: 10px;
+    color: rgb(48, 37, 141);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#header-title-text {
+    color: grey ;
+    font-family: arial;
+    font-size: 65px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#sub-header-title-text {
+    color: grey ;
+    font-family: arial;
+    font-size: 30px;
+    text-align: center;
+}
+
+#portrait {
+    height: 400px;   
+}
+
+.arrow {
+    height: 100px;
+    width: 100px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#template {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+    margin: auto;
+    margin-top: 10%;
+    padding: 10px 10px 30px 10px;
+    position: relative;
+    text-align: center;
+    width: 60%;
+    z-index: 100;
+}
+
+
+
+/*Pure CSS animations
+  Credits go to https://codepen.io/Olliebaba/pen/XVPewm
+  This is a modification of the compiled LESS code of the example link.*/
+.stage {
+    position: absolute;
+    background: #2F4F4F;
+    width: 100%;
+    z-index: 1;
+/*    padding: 150px;
+    /* Someday, sigh ... */
+/*    -webkit-filter: contrast(40);
+    /* Prefixed CSS3 contrast filters */
+/*    -moz-filter: contrast(40);
+    -o-filter: contrast(40);
+    -ms-filter: contrast(40);
+    filter: contrast(40); */
+  }
+  .dot {
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: 50px;
+    /* needs to be very contrasty color. Some light gray won't work */
+    background: #c8f09b;
+    filter: blur(10px);
+    /* Someday, sigh ... */
+    -webkit-filter: blur(10px);
+    /* Prefixed CSS3 blur filters */
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+  }
+  .dot.del-1 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    width: 50px;
+    height: 50px;
+  }
+  .dot.del-2 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+    width: 75px;
+    height: 75px;
+  }
+  .dot.del-3 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    width: 30px;
+    height: 30px;
+  }
+  .dot.del-4 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.9s;
+    width: 55px;
+    height: 55px;
+  }
+  .dot.del-5 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.6s;
+    width: 40px;
+    height: 55px;
+  }
+  .dot.del-6 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.8s;
+    width: 30px;
+    height: 40px;
+  }
+  .dot.del-7 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.5s;
+    width: 80px;
+    height: 80px;
+  }
+  .dot.del-8 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.8s;
+    width: 90px;
+    height: 30px;
+  }
+  .dot.del-9 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.2s;
+    width: 10px;
+    height: 40px;
+  }
+  .dot.del-10 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.2s;
+    width: 30px;
+    height: 50px;
+  }
+  .dot.del-11 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.2s;
+    width: 40px;
+    height: 40px;
+  }
+  .dot.del-12 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.2s;
+    width: 10px;
+    height: 15px;
+  }
+  .dot.del-13 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.2s;
+    width: 120px;
+    height: 98px;
+  }
+  .dot.del-14 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.2s;
+    width: 170px;
+    height: 30px;
+  }
+  .dot.del-15 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.2s;
+    width: 88px;
+    height: 66px;
+  }
+  .dot.del-16 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.2s;
+    width: 30px;
+    height: 50px;
+  }
+
+  .move {
+    display: block;
+  }
+  .move:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+  .move:nth-child(2) {
+    -webkit-animation-delay: -10s;
+    animation-delay: -10s;
+  }
+  .move:nth-child(3) {
+    -webkit-animation-delay: -20s;
+    animation-delay: -20s;
+  }
+  .move:nth-child(4) {
+    -webkit-animation-delay: -30s;
+    animation-delay: -30s;
+  }
+  .move:nth-child(5) {
+    -webkit-animation-delay: -40s;
+    animation-delay: -40s;
+  }
+  .move:nth-child(6) {
+    -webkit-animation-delay: -50s;
+    animation-delay: -50s;
+  }
+  .move:nth-child(7) {
+    -webkit-animation-delay: -60s;
+    animation-delay: -60s;
+  }
+  .move:nth-child(8) {
+    -webkit-animation-delay: -70s;
+    animation-delay: -70s;
+  }
+  .move:nth-child(9) {
+    -webkit-animation-delay: -80s;
+    animation-delay: -80s;
+  }
+  .move:nth-child(10) {
+    -webkit-animation-delay: -80s;
+    animation-delay: -80s;
+  }
+  .move:nth-child(11) {
+    -webkit-animation-delay: -44s;
+    animation-delay: -44s;
+  }
+  .move:nth-child(12) {
+    -webkit-animation-delay: -20s;
+    animation-delay: -20s;
+  }
+  .move:nth-child(13) {
+    -webkit-animation-delay: -10s;
+    animation-delay: -10s;
+  }
+  .move:nth-child(14) {
+    -webkit-animation-delay: -100s;
+    animation-delay: -100s;
+  }
+  .move:nth-child(15) {
+    -webkit-animation-delay: -120s;
+    animation-delay: -120s;
+  }
+  .move:nth-child(16) {
+    -webkit-animation-delay: -60s;
+    animation-delay: -60s;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translate3d(10%, 0, 0);
+    }
+    50% {
+      transform: translate3d(90%, 0, 0);
+    }
+    100% {
+      transform: translate3d(10%, 0, 0);
+    }
+  }
+  .move {
+    animation-name: move;
+    animation-duration: 35s;
+    animation-iteration-count: infinite;
+  }
