@@ -10,9 +10,9 @@ if (empty($dbUrl)) {
 	try
 	{
 		$host = "localhost";
-		$user = 'web_user';
-		$password = 'fake-password';
-		$db = new PDO('pgsql:host=localhost;dbname=scripture', $user, $password);
+		$user = 'viewer';
+		$password = '123456';
+		$db = new PDO('pgsql:host=localhost;dbname=password', $user, $password);
 		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	}
 	catch (PDOException $ex)
