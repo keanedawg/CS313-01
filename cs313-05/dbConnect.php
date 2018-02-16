@@ -2,7 +2,7 @@
 function get_db() {
 	$dbUrl = getenv('DATABASE_URL');
 	if (empty($dbUrl)) {
-		$dbUser = "viewer";
+		$dbUser = "reader_viewer";
 		$dbPassword = "123456";
 		$dbPort = "5433";
 		$dbHost = "localhost";
@@ -23,6 +23,6 @@ function get_db() {
      print var_dump($ex);
      die();
 	}
-	return $db;
+    return $db;
 }
 ?>
