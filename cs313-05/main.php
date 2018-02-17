@@ -26,8 +26,13 @@ $houses = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php
     foreach ($houses as $house)
     {
+
         $name = $house["name"];
+        $address = $house["address"];
+        $picture = $house["picture"];
         echo "<li><p>$name</p></li>";
+        echo "<img src=\"$picture\">";
+        echo "<li><p>$address</p></li>";
     }
     ?>
 	</ul>
