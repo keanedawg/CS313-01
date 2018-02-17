@@ -4,7 +4,7 @@ function get_db() {
 	if (empty($dbUrl)) {
 		$dbUser = "reader_viewer";
 		$dbPassword = "123456";
-		$dbPort = "5433";
+		$dbPort = "5432";
 		$dbHost = "localhost";
 		$dbName = "house_ratings";
 	} else {
