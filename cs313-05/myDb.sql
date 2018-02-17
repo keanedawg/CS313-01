@@ -49,3 +49,8 @@ INSERT INTO employees (name, house_id) values ('Danielle', 2);
 INSERT INTO employee_reviews (score, employee_id) values (5, 7);
 INSERT INTO employee_reviews (score, employee_id) values (4, 7);
 INSERT INTO employee_reviews (score, employee_id) values (2, 9);
+
+
+CREATE USER reader_viewer WITH PASSWORD '123456';
+GRANT SELECT, INSERT ON ALL TABLES IN SCHEMA public TO reader_viewer;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO reader_viewer;
