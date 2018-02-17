@@ -34,7 +34,8 @@ ALTER TABLE houses ADD picture VARCHAR(1000);
 
 INSERT INTO houses (name, address, picture) VALUES ('Tuscany', '440 S 2nd W', 'https://thedealio.org/rexburgapartment/wp-content/uploads/sites/6/2016/12/iyzI2ibER5atSaMZmTzA_n1236.jpg' );
 
-INSERT INTO houses (name, address, picture) VALUES ('Mountain Lofts', '538 S 2nd W', 'https://thedealio.org/rexburgapartment/wp-content/uploads/sites/6/2016/12/iyzI2ibER5atSaMZmTzA_n1236.jpg' );
+INSERT INTO houses (name, address, picture) VALUES ('Mountain Lofts', '538 S 2nd W', 'https://i.ytimg.com/vi/qVRlw1gAzJs/hqdefault.jpg' );
+UPDATE houses SET picture = '' WHERE id = 2;
 
 INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (5, true, 'I love it here. The maintenence team is superb and personal rooms is also an appreciated feature.', 1);
 
