@@ -4,20 +4,18 @@ require('dbConnect.php');
 $myDb = get_db();
 
 
-// $movieId = $_GET["movieId"];
+$movieId = $_GET["movieID"];
 // $stmt->bindValue(':theid', $movieId, PDO::PARAM_INT);
 
-$stmt = $myDb->prepare('SELECT * FROM houses');
+$stmt = $myDb->prepare('SELECT * FROM house_ratings');
 $stmt->execute();
 $houses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rate My Housing</title>
+	<title><?php echo "put something in here"; ?></title>
 </head>
 <body>
 <h1>Rate My Housing</h1>
@@ -26,7 +24,7 @@ $houses = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php
     foreach ($houses as $house)
     {
-        $name = $house["name"];
+        $name = $house["score"];
         $address = $house["address"];
         $picture = $house["picture"];
         echo "<li><p>$name</p></li>";
@@ -37,4 +35,3 @@ $houses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	</ul>
 </body>
 </html>
-
