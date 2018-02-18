@@ -16,6 +16,7 @@ $myDb = get_db();
 
 <div class="main"> 
     <h1>Welcome, click on any of the houses to get started!</h1>
+    <a href="writereview.php"><h1>Click Here to write your own review!</h1></a>
 </div>
 </body>
 </html>

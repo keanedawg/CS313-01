@@ -17,6 +17,8 @@ $myDb = get_db();
         require 'header.php';
         require 'sidebar.php';
     ?>
-
+    <div class="main">
+        <h1>Coming Soon!</h1>
+    </div>
 </body>
 </html>
