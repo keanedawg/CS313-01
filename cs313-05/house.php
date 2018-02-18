@@ -29,6 +29,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
 	<title><?php echo $house["name"]; ?></title>
+    <link rel="stylesheet" href="basic.css">
 </head>
 <body>
 <h1>Rate My Housing</h1>
