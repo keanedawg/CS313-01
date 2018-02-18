@@ -18,23 +18,14 @@ $houses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
 	<title>Rate My Housing</title>
+    <link rel="stylesheet" href="basic.css">
 </head>
 <body>
-<h1>Rate My Housing</h1>
-<i>The best way to find good housing</i>
-	<ul>
-    <?php
-    foreach ($houses as $house)
-    {
-        $name = $house["name"];
-        $address = $house["address"];
-        $picture = $house["picture"];
-        echo "<li><p>$name</p></li>";
-        echo "<img src=\"$picture\">";
-        echo "<li><p>$address</p></li>";
-    }
-    ?>
-	</ul>
+
+
+<div class="main">
+    <h1>Welcome, click on any of the houses to get started!</h1>
+</div>
 </body>
 </html>
 
