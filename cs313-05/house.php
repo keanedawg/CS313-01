@@ -47,7 +47,13 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     {
         $name = $employee["name"];
         $avg = $employee["trunc"];
-        echo "<li>$name - $avg</li>";
+        echo "<li>$name - ";
+        if (empty($employee["trunc"])) {
+            echo "N/A</li>";
+        }
+        else {
+            echo "$avg</li>";
+        }
     }
 ?>
 </ul>
