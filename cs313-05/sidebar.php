@@ -1,5 +1,5 @@
 <?php
-$stmt = $myDb->prepare('SELECT * FROM houses');
+$stmt = $myDb->prepare('SELECT name, address, id FROM houses');
 $stmt->execute();
 $houses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
