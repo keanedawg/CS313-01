@@ -33,6 +33,27 @@
     margin-top: 15px;
 }
 
+.house-row {
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.house-row:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+
+.house-row-title {
+    margin-left: 10px;
+    font-size: 24px;
+    margin-bottom: 2px;
+}
+
+.house-row-address {
+    margin-left: 10px;
+    margin-top: 2px;
+    font-size: 14px;
+}
+
 img {
     float: right;
     height: 300px;

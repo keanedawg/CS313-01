@@ -5,16 +5,16 @@ $complexes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="left">
-	<ul>
     <?php
     foreach ($complexes as $complex)
     {
+        echo "<div class=\"house-row\">";
         $name = $complex["name"];
         $address = $complex["address"];
-        echo "<li><p>$name</p></li>";
-        echo "<li><p>$address</p></li>";
+        echo "<p class=\"house-row-title\">$name</p>";
+        echo "<p class=\"house-row-address\">$address</p>";
+        echo "</div>";
     }
     ?>
-	</ul>
 </div>
 
