@@ -1,8 +1,9 @@
 .top {
+    background-color: darkgreen;
     position:absolute;
     left:0; right:0;
     height: 92px;
-    margin-top: 0%;
+    margin-top: -10px;
     border-bottom-style: solid;
     border-bottom-color: black;
     border-bottom-width: 3px;
@@ -21,5 +22,28 @@
     position: absolute;
     left:178px; top:92px; right:0; bottom:0;
     height: 100%;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    margin-top: 15px;
+}
+
+img {
+    float: right;
+    height: 300px;
+    width: 300px;
+}
+
+.home-nav {
+    margin-top: 10px;
+    height: 70px;
+    width: 100px;
+    float: left;
+    position: absolute;
 }
 

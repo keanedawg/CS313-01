@@ -1,4 +1,4 @@
 <div class="top">
-    <h3>Rate My Housing</h3>
-    <i>The best way to find good housing</i>
+    <img src="http://jitariustudio.com/wp-content/uploads/2014/05/home_icon.png" class="home-nav">
+    <h3 class="title">Rate My Housing</h3>
 </div>
