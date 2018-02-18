@@ -55,3 +55,9 @@ INSERT INTO employee_reviews (score, employee_id) values (2, 9);
 CREATE USER reader_viewer WITH PASSWORD '123456';
 GRANT SELECT, INSERT ON ALL TABLES IN SCHEMA public TO reader_viewer;
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO reader_viewer;
+
+
+/* Here's a Query for the average ratings with employees */
+SELECT * FROM employees
+LEFT JOIN (SELECT employee_id, avg(score) FROM employee_reviews GROUP BY employee_id) AS foo
+ON employees.id = foo.employee_id;
