@@ -16,7 +16,10 @@ $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt = $myDb->prepare("SELECT * FROM employees WHERE house_id = :theid ;");
+$stmt = $myDb->prepare("SELECT * FROM employees
+LEFT JOIN (SELECT employee_id, avg(score) FROM employee_reviews GROUP BY employee_id) AS foo
+ON employees.id = foo.employee_id WHERE employees.house_id = 1;");
+
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -43,7 +46,8 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach ($employees as $employee)
     {
         $name = $employee["name"];
-        echo "<li>$name</li>";
+        $avg = $employee["avg"];
+        echo "<li>$name - $avg</li>";
     }
 ?>
 </ul>
