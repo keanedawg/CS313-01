@@ -1,16 +1,16 @@
 <?php
 $stmt = $myDb->prepare('SELECT name, address, id FROM houses');
 $stmt->execute();
-$houses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$complexes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="left">
 	<ul>
     <?php
-    foreach ($houses as $house)
+    foreach ($complexes as $complex)
     {
-        $name = $house["name"];
-        $address = $house["address"];
+        $name = $complex["name"];
+        $address = $complex["address"];
         echo "<li><p>$name</p></li>";
         echo "<li><p>$address</p></li>";
     }
