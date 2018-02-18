@@ -11,10 +11,15 @@ $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $house = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$stmt = $myDb->prepare("select * from house_reviews WHERE house_id = :theid ;");
+$stmt = $myDb->prepare("SELECT * FROM house_reviews WHERE house_id = :theid ;");
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt = $myDb->prepare("SELECT * FROM employees WHERE house_id = :theid ;");
+$stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
+$stmt->execute();
+$employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +36,20 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <h2><?php echo $house["name"]; ?></h2>
 <img src="<?php echo $house["picture"]; ?>">
 <p><?php echo $house["address"]; ?></p>
+<p>Employees:</p>
+<ul>
+<?php
+    echo "<hr size=2>";
+    foreach ($employees as $employee)
+    {
+        $name = $employee["name"];
+        echo "<li>$name</li>";
+    }
+?>
+</ul>
 
+
+<h3>Reviews</h3>
 	<ul>
     <?php
     echo "<hr size=2>";
