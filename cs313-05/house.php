@@ -38,7 +38,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="main">
-<h2><?php echo $house["name"]; ?></h2>
+<h2 class="house-main-title"><?php echo $house["name"]; ?></h2>
 <img src="<?php echo $house["picture"]; ?>">
 <p><?php echo $house["address"]; ?></p>
 <h3>Employee Reviews</h3>
