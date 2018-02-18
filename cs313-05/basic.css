@@ -68,3 +68,7 @@ img {
     position: absolute;
 }
 
+a {
+    color: inherit;
+    text-decoration: none; /* no underline */
+  }

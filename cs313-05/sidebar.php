@@ -8,12 +8,13 @@ $complexes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php
     foreach ($complexes as $complex)
     {
-        echo "<div class=\"house-row\">";
+        $complexID = $complex["id"];
+        echo "<a href=\"house.php?house=$complexID\"><div class=\"house-row\">";
         $name = $complex["name"];
         $address = $complex["address"];
         echo "<p class=\"house-row-title\">$name</p>";
         echo "<p class=\"house-row-address\">$address</p>";
-        echo "</div>";
+        echo "</div></a>";
     }
     ?>
 </div>
