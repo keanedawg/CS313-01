@@ -2,6 +2,10 @@
     position:absolute;
     left:0; right:0;
     height: 92px;
+    margin-top: 0%;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 3px;
 }
 .left {
     position:absolute;
