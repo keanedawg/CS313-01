@@ -6,7 +6,8 @@ $myDb = get_db();
 
 $houseId = $_GET["house"];
 
-$stmt = $myDb->prepare("select * from houses where id = :theid ;");
+$stmt = $myDb->prepare("SELECT * FROM houses WHERE id = :theid ;");
+$stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $house = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -14,8 +15,6 @@ $stmt = $myDb->prepare("select * from house_reviews WHERE house_id = :theid ;");
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -26,9 +25,12 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 <h1>Rate My Housing</h1>
 <i>The best way to find good housing</i><br>
-<h2><?php echo $house; ?></h2>
+
 
 <a href="main.php">go back</a> 
+<h2><?php echo $house["name"]; ?></h2>
+<img src="<?php echo $house["picture"]; ?>">
+<p><?php echo $house["address"]; ?></p>
 
 	<ul>
     <?php
