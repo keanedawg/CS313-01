@@ -19,7 +19,6 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt = $myDb->prepare("SELECT * FROM employees
 LEFT JOIN (SELECT employee_id, trunc(avg( score ), 1) FROM employee_reviews GROUP BY employee_id) AS foo
 ON employees.id = foo.employee_id WHERE employees.house_id = 1;");
-
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -32,11 +31,13 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="basic.css">
 </head>
 <body>
-<h1>Rate My Housing</h1>
-<i>The best way to find good housing</i><br>
 
+<?php 
+    require 'header.php';
+    require 'sidebar.php';
+?>
 
-<a href="main.php">go back</a> 
+<div class="main">
 <h2><?php echo $house["name"]; ?></h2>
 <img src="<?php echo $house["picture"]; ?>">
 <p><?php echo $house["address"]; ?></p>
@@ -58,7 +59,6 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 ?>
 </ul>
-
 
 <h3>Reviews</h3>
 	<ul>
@@ -84,6 +84,8 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo "<hr size=2>";
     }
     ?>
-	</ul>
+    </ul>
+</div>
+</main>
 </body>
 </html>
