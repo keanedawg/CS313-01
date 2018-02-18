@@ -21,9 +21,10 @@ $houses = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="basic.css">
 </head>
 <body>
-
+<?php require 'header.php'; ?>
 
 <div class="main">
+    
     <h1>Welcome, click on any of the houses to get started!</h1>
 </div>
 </body>
