@@ -59,5 +59,5 @@ GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO reader_viewer;
 
 /* Here's a Query for the average ratings with employees */
 SELECT * FROM employees
-LEFT JOIN (SELECT employee_id, avg(score) FROM employee_reviews GROUP BY employee_id) AS foo
+LEFT JOIN (SELECT employee_id, trunc(avg(score), 1) FROM employee_reviews GROUP BY employee_id) AS foo
 ON employees.id = foo.employee_id WHERE employees.house_id = 1;

@@ -17,7 +17,7 @@ $stmt->execute();
 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $stmt = $myDb->prepare("SELECT * FROM employees
-LEFT JOIN (SELECT employee_id, avg(score) FROM employee_reviews GROUP BY employee_id) AS foo
+LEFT JOIN (SELECT employee_id, trunc(avg( score ), 1) FROM employee_reviews GROUP BY employee_id) AS foo
 ON employees.id = foo.employee_id WHERE employees.house_id = 1;");
 
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
@@ -46,7 +46,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach ($employees as $employee)
     {
         $name = $employee["name"];
-        $avg = $employee["avg"];
+        $avg = $employee["trunc"];
         echo "<li>$name - $avg</li>";
     }
 ?>
