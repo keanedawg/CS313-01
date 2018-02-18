@@ -41,7 +41,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <h2><?php echo $house["name"]; ?></h2>
 <img src="<?php echo $house["picture"]; ?>">
 <p><?php echo $house["address"]; ?></p>
-<p>Employees:</p>
+<h3>Employee Reviews</h3>
 <ul>
 <?php
     echo "<hr size=2>";
@@ -60,7 +60,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 </ul>
 
-<h3>Reviews</h3>
+<h3>House Reviews:</h3>
 	<ul>
     <?php
     echo "<hr size=2>";
