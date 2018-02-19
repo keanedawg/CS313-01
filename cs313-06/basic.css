@@ -24,6 +24,16 @@
     height: 100%;
 }
 
+.rate-employee-button {
+    background-color: darkgreen;
+    color: white;
+    font-size: 18px;
+}
+
+.rate-employee-button {
+    background-color: darkgreen;
+}
+
 .title {
     color: white;
     text-align: center;

@@ -1,5 +1,3 @@
-<!-- Not actually used, just a template for creating new pages -->
-
 <?php
 require('dbConnect.php');
 $myDb = get_db();
