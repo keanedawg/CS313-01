@@ -89,7 +89,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo "<p>$commentary</p>";
         echo "<hr size=2>";
     }
-        echo "<a href=\"writereview.php\"><div class=\"rate-house-button\">Rate It!</div></a>";
+        echo "<a href=\"writereview.php?house=$houseId\"><div class=\"rate-house-button\">Rate It!</div></a>";
     ?>
     </ul>
 </div>
