@@ -30,8 +30,10 @@
     font-size: 18px;
 }
 
-.rate-employee-button {
+.rate-house-button {
     background-color: darkgreen;
+    color: white;
+    font-size: 18px;
 }
 
 .title {
