@@ -65,6 +65,8 @@ GRANT SELECT, INSERT ON ALL TABLES IN SCHEMA public TO reader_viewer;
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO reader_viewer;
 
 
+/* Practice queries. Not meant to create the database */
+
 /* Here's a Query for the average ratings with employees */
 SELECT * FROM employees
 LEFT JOIN (SELECT employee_id, trunc(avg(score), 1) FROM employee_reviews GROUP BY employee_id) AS foo
