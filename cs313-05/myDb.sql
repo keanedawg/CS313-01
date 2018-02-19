@@ -47,9 +47,9 @@ INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (1, 
 
 INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (3, true, 'I like the housing but there is too much noise in the halls. I recommend it but beware.', 2);
 
-INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (5, true, 'All I will say is that if they turned out to have filmed Harry Potter here, I wouldn\'t be surprised', 2);
+INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (5, true, 'All I''ll say is that if they turned out to have filmed Harry Potter here, I wouldn''t be surprised.', 3);
 
-INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (1, false, 'I like the housing but there is too much noise in the halls. I recommend it but beware.', 2);
+INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (1, false, 'I came back from school one day to catch my roommates performing a human sacrafice. The clean checks are also kinda strict.', 4);
 
 INSERT INTO employees (name, house_id) values ('Sammy', 1);
 INSERT INTO employees (name, house_id) values ('Hannah', 1);
