@@ -1,7 +1,6 @@
 <!-- Not actually used, just a template for creating new pages -->
 
 <?php
-session_start();
 require('dbConnect.php');
 $myDb = get_db();
 ?>
