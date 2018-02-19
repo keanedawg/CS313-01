@@ -10,7 +10,7 @@ $stmt->execute();
 $house = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-$stmt = $myDb->prepare("SELECT * FROM employees WHERE house_id = :theid;");
+$stmt = $myDb->prepare("SELECT name, id FROM employees WHERE house_id = :theid;");
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -27,12 +27,21 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
         require 'header.php';
         require 'sidebar.php';
     ?>
-    
     <div class="main">
-    <h1>foo</h1>
-        <form>
+    <h1>Rate your experience at <?php echo $house["name"]; ?></h1>
+        <form action="submitHouseReview.php" type="POST">
             Would you recommend it?<input type="checkbox"><br>
-            How would you rate it overall?<input type="text"><br>
+            How would you rate it overall?<input type="text"><br>   
+            <input type="hidden" name="houseid" value"<?php echo $house["id"]; ?>">
+            <h2>(Optional) How would you rate their staff?</h2>
+            <?php
+                foreach ($employees as $employee)
+                {
+                    $name = $employee["name"];
+                    $id = $employee["id"];
+                    echo "<li>$name : <input name=\"emp$id\" type=\"text\"><br>";
+                }
+            ?>   
         </form>
     </div>
 </body>
