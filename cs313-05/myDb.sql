@@ -36,7 +36,7 @@ INSERT INTO houses (name, address, picture) VALUES ('Tuscany', '440 S 2nd W', 'h
 INSERT INTO houses (name, address, picture) VALUES ('Mountain Lofts', '538 S 2nd W', 'https://i.ytimg.com/vi/qVRlw1gAzJs/hqdefault.jpg' );
 INSERT INTO houses (name, address, picture) VALUES ('Windsor Manor', '538 FOO BAR Dr', 'http://thewindsormanor.com/wp-content/uploads/2015/09/IMG_7399_41-1024x683.jpg' );
 INSERT INTO houses (name, address, picture) VALUES ('Viking Village', '2 Harvard St', 'https://www.liveherehousing.com/photos/n1254.jpg' );
-
+INSERT INTO houses (name, address, picture) VALUES ('Windoor Manor', '555 FOO BAR Dr', 'http://thewindsormanor.com/wp-content/uploads/2015/09/IMG_7399_41-1024x683.jpg' );
 
 
 UPDATE houses SET picture = '' WHERE id = 2;
@@ -45,7 +45,11 @@ INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (5, 
 
 INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (1, false, 'THE MANAGEMENT DOESNT CARE ABOUT ANYONE OR ANYTHING EXCEPT MAKING MONEY.', 1);
 
-INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (3, false, 'I like the housing but there is too much noise in the halls. I recommend it but beware.', 2);
+INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (3, true, 'I like the housing but there is too much noise in the halls. I recommend it but beware.', 2);
+
+INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (5, true, 'All I will say is that if they turned out to have filmed Harry Potter here, I wouldn\'t be surprised', 2);
+
+INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (1, false, 'I like the housing but there is too much noise in the halls. I recommend it but beware.', 2);
 
 INSERT INTO employees (name, house_id) values ('Sammy', 1);
 INSERT INTO employees (name, house_id) values ('Hannah', 1);
