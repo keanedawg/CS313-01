@@ -38,9 +38,6 @@ INSERT INTO houses (name, address, picture) VALUES ('Windsor Manor', '538 FOO BA
 INSERT INTO houses (name, address, picture) VALUES ('Viking Village', '2 Harvard St', 'https://www.liveherehousing.com/photos/n1254.jpg' );
 INSERT INTO houses (name, address, picture) VALUES ('Windoor Manor', '555 FOO BAR Dr', 'http://thewindsormanor.com/wp-content/uploads/2015/09/IMG_7399_41-1024x683.jpg' );
 
-
-UPDATE houses SET picture = '' WHERE id = 2;
-
 INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (5, true, 'I love it here. The maintenence team is superb and personal rooms is also an appreciated feature.', 1);
 
 INSERT INTO house_reviews (score, recommended, commentary, house_id) VALUES (1, false, 'THE MANAGEMENT DOESNT CARE ABOUT ANYONE OR ANYTHING EXCEPT MAKING MONEY.', 1);
