@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('dbConnect.php');
 $myDb = get_db();
 ?>
@@ -16,7 +15,7 @@ $myDb = get_db();
 
 <div class="main"> 
     <h1>Welcome, click on any of the houses to get started!</h1>
-    <a href="writereview.php"><h1>Click Here to write your own review!</h1></a>
+    <a href="writereview.php"><u>Click Here to write your own review!<u></a>
 </div>
 </body>
 </html>
