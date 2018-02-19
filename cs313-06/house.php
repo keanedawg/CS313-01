@@ -52,10 +52,10 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $avg = $employee["trunc"];
         echo "<li>$name - ";
         if (empty($employee["trunc"])) {
-            echo "N/A</li>";
+            echo "N/A <div class=\"rate-employee-button\">Rate</div></li>";
         }
         else {
-            echo "$avg</li>";
+            echo "$avg <div class=\"rate-employee-button\">Rate</div></li>";
         }
     }
 ?>
@@ -89,6 +89,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo "<p>$commentary</p>";
         echo "<hr size=2>";
     }
+        echo "<a href=\"writereview.php\"><div class=\"rate-house-button\">Rate It!</div></a>";
     ?>
     </ul>
 </div>
