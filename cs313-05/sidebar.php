@@ -23,7 +23,7 @@ $complexes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $score = $complex["avg_score"];
         echo "<p class=\"house-row-title\">$name</p>";
         if ($score > 4.0) {
-            echo "<p style=\"color:lightgreen\" class=\"house-row-score\">$score</p>";
+            echo "<p style=\"color:rgb(116, 195, 101)\" class=\"house-row-score\">$score</p>";
         }
         else if ($score > 2.2) {
             echo "<p style=\"color:rgb(239, 204, 0)\" class=\"house-row-score\">$score</p>";
@@ -32,7 +32,7 @@ $complexes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             echo "<p class=\"house-row-empty\">no ratings</p>";
         }
         else {
-            echo "<p style=\"color:crimson\" class=\"house-row-score\">$score</p>";
+            echo "<p style=\"color:rgb(132, 27, 45)\" class=\"house-row-score\">$score</p>";
         }
         echo "</div></a>";
     }

@@ -44,7 +44,9 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <h3>Employee Reviews</h3>
 <ul>
 <?php
-    echo "<hr size=2>";
+    if (empty($employees)) {
+        echo "<p>No Employee Reviews Currently :(</p>";
+    }
     foreach ($employees as $employee)
     {
         $name = $employee["name"];
@@ -63,7 +65,12 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <h3>House Reviews:</h3>
 	<ul>
     <?php
-    echo "<hr size=2>";
+    if (empty($reviews)) {
+        echo "<p>No House Reviews Currently :(</p>";
+    }
+    else {
+        echo "<hr size=2>";
+    }
     foreach ($reviews as $review)
     {
         $score = $review["score"];
