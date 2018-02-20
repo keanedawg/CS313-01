@@ -17,8 +17,8 @@
     $stmt->execute();
     $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    echo $houseId;
-    echo "<br>$score<br>$recommended<br>$commentary";
+    // echo $houseId;
+    // echo "<br>$score<br>$recommended<br>$commentary";
 
     // Set up house insert
     $stmt = $myDb->prepare("INSERT INTO house_reviews (score, recommended, commentary, house_id) 
@@ -28,4 +28,8 @@
     $stmt->bindValue(':recommended', $recommended, PDO::PARAM_BOOL);
     $stmt->bindValue(':commentary', $commentary, PDO::PARAM_STR);
     $stmt->execute();
+
+
+    header("Location:house.php?house=$houseId");
+    exit;
 ?>
