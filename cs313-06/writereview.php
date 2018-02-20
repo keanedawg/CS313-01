@@ -28,6 +28,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
     <div class="main">
         <?php 
+            // It's easier to handle the separate cases if I break my code this way
             if (empty($houseId)) {
                 require "writereview/empty.php";
             }
