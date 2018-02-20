@@ -1,6 +1,10 @@
 <h1>Rate your experience at <?php echo $house["name"]; ?></h1>
 <form id="review" action="./submitreview.php" method="POST">
-    Would you recommend it?<input required name="recommended" type="checkbox"><br>
+    Would you recommend it?
+    yes <input required value=true name="recommended" type="radio">
+    no  <input value=false name="recommended" type="radio">
+    
+    <br>
     How would you rate it overall?<input required name="score" type="text"><br>   
     <input required type="hidden" name="houseid" value="<?php echo $house["id"]; ?>">
     <p>Please explain your rating: </p>
