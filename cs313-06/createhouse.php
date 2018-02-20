@@ -16,12 +16,12 @@ $myDb = get_db();
     ?>
     <div class="main">
         <h1>Create a new house</h1>
-        <form action="./submitemployee.php" method="post">
-            Name: <input required type="text" name="address">
+        <form action="./submitHouse.php" method="post">
+            Name: <input required type="text" name="name">
             <br>
             Address: <input required type="text" name="address">
             <br>
-            Picture Address (optional): <input type="text" name="address"> 
+            Picture Address (optional): <input type="text" name="picture"> 
             <br>
             <br>
             <input class="submit-review" type="submit" value="Create House!">

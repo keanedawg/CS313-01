@@ -15,7 +15,8 @@
         {
             $name = $employee["name"];
             $id = $employee["id"];
-            echo "$name : <input name=\"emp$id\" type=\"text\"><br>";
+            echo "<input type=\"hidden\" name=\"emp[]\" value=\"$id\">";
+            echo "$name : <input name=\"rating[]\ type=\"text\"><br>";
         }
     ?>   
     <input class="submit-review" type="submit" value="Submit">

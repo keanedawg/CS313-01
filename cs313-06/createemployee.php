@@ -16,7 +16,7 @@ $myDb = get_db();
     ?>
     <div class="main">
         <h1>Create a new employee</h1>
-        <form action="./submitemployee.php" method="get">
+        <form action="./submitEmployee.php" method="POST">
             Name: <input required type="text" name="name"> 
             <br>
             Select House:
