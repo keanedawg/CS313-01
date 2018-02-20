@@ -32,13 +32,15 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
             Would you recommend it?<input type="checkbox"><br>
             How would you rate it overall?<input type="text"><br>   
             <input type="hidden" name="houseid" value"<?php echo $house["id"]; ?>">
+            <p>Please explain your rating: </p>
+            <textarea name="commentary"></textarea>
             <h2>(Optional) How would you rate their staff?</h2>
             <?php
                 foreach ($employees as $employee)
                 {
                     $name = $employee["name"];
                     $id = $employee["id"];
-                    echo "<li>$name : <input name=\"emp$id\" type=\"text\"><br>";
+                    echo "$name : <input name=\"emp$id\" type=\"text\"><br>";
                 }
             ?>   
             <input class="submit-review" type="submit" value="Submit">
