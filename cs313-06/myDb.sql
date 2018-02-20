@@ -52,9 +52,9 @@ INSERT INTO employees (name, house_id) values ('Sammy', 1);
 INSERT INTO employees (name, house_id) values ('Hannah', 1);
 INSERT INTO employees (name, house_id) values ('Danielle', 2);
 
-INSERT INTO employee_reviews (score, employee_id) values (5, 7);
-INSERT INTO employee_reviews (score, employee_id) values (4, 7);
-INSERT INTO employee_reviews (score, employee_id) values (2, 9);
+INSERT INTO employee_reviews (score, employee_id) values (5, 1);
+INSERT INTO employee_reviews (score, employee_id) values (4, 1);
+INSERT INTO employee_reviews (score, employee_id) values (2, 3);
 
 
 CREATE USER reader_viewer WITH PASSWORD '123456';
