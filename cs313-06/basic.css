@@ -112,6 +112,14 @@ img {
     position: absolute;
 }
 
+.submit-review {
+    margin-top: 20px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    background-color: darkgreen;
+}
+
 a {
     color: inherit;
     text-decoration: none; /* no underline */

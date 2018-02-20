@@ -9,7 +9,6 @@ $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $house = $stmt->fetch(PDO::FETCH_ASSOC);
 
-
 $stmt = $myDb->prepare("SELECT name, id FROM employees WHERE house_id = :theid;");
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
@@ -42,6 +41,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     echo "<li>$name : <input name=\"emp$id\" type=\"text\"><br>";
                 }
             ?>   
+            <input class="submit-review" type="submit" value="Submit">
         </form>
     </div>
 </body>
