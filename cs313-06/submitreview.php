@@ -4,6 +4,11 @@
 
     $houseId = $_POST["houseid"];
 
+    if (empty($houseId)) {
+        header("Location:house.php");
+        exit;
+    }
+
     /* get house review parameters (all required) */
     $score = $_POST["score"];
     $recommended = $_POST["recommended"];
