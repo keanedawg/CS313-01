@@ -10,6 +10,6 @@
     $stmt->execute();
     $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    echo "<p>$houseID</p>";
+    echo $houseId;
 
 ?>

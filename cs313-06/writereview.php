@@ -28,12 +28,12 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
     <div class="main">
     <h1>Rate your experience at <?php echo $house["name"]; ?></h1>
-        <form action="submitHouseReview.php" type="POST">
-            Would you recommend it?<input type="checkbox"><br>
-            How would you rate it overall?<input type="text"><br>   
-            <input type="hidden" name="houseid" value"<?php echo $house["id"]; ?>">
+        <form id="review" action="./submitreview.php" method="POST">
+            Would you recommend it?<input name="recommended" type="checkbox"><br>
+            How would you rate it overall?<input name="score" type="text"><br>   
+            <input type="hidden" name="houseid" value="<?php echo $house["id"]; ?>">
             <p>Please explain your rating: </p>
-            <textarea name="commentary"></textarea>
+            <textarea name="commentary" form="review"></textarea>
             <h2>(Optional) How would you rate their staff?</h2>
             <?php
                 foreach ($employees as $employee)
