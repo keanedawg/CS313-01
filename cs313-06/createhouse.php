@@ -15,7 +15,17 @@ $myDb = get_db();
         require 'sidebar.php';
     ?>
     <div class="main">
-        <h1>Coming Soon!</h1>
+        <h1>Create a new house</h1>
+        <form action="./submitemployee.php" method="get">
+            Name: <input required type="text" name="address">
+            <br>
+            Address: <input required type="text" name="address">
+            <br>
+            Picture Address: <input required type="text" name="address"> 
+            <br>
+            <br>
+            <input class="submit-review" type="submit" value="Create House!">
+        </form>
     </div>
 </body>
 </html>
