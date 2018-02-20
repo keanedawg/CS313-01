@@ -72,3 +72,25 @@ ON employees.id = foo.employee_id WHERE employees.house_id = 1;
 SELECT * FROM houses
 LEFT JOIN (SELECT house_id, trunc(avg(score), 1) FROM house_reviews GROUP BY house_id) AS r
 ON houses.id = r.house_id;
+
+
+/* Clear all tables */
+CREATE OR REPLACE FUNCTION clear() RETURNS integer AS $$
+DECLARE
+    i integer = 0;
+    r RECORD;
+BEGIN
+    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
+        RAISE NOTICE 'DROP TABLE IF EXISTS % CASCADE;', r.tablename;
+        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE;';
+        i := i + 1;
+    END LOOP;
+    
+    IF i = 0 THEN
+        RAISE NOTICE 'No tables to drop.';
+    END IF;
+    
+    RETURN i;
+END;
+$$ LANGUAGE plpgsql;
+-- SELECT clear();
