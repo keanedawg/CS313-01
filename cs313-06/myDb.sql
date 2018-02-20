@@ -30,6 +30,13 @@ CREATE TABLE employee_reviews (
     date_added timestamp default now()
 );
 
+CREATE TABLE users (
+    id BIGSERIAL PRIMARY KEY,
+    username varchar(30) NOT NULL UNIQUE,
+    password varchar(255) NOT NULL,
+    date_added timestamp default now()
+);
+
 ALTER TABLE houses ADD picture VARCHAR(1000); 
 
 INSERT INTO houses (name, address, picture) VALUES ('Tuscany', '440 S 2nd W', 'https://thedealio.org/rexburgapartment/wp-content/uploads/sites/6/2016/12/iyzI2ibER5atSaMZmTzA_n1236.jpg' );
