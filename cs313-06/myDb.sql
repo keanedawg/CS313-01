@@ -13,20 +13,20 @@ CREATE TABLE house_reviews (
     score INTEGER NOT NULL,
     recommended BOOLEAN NOT NULL,
     commentary VARCHAR(2000) NOT NULL,
-    house_id INTEGER REFERENCES houses(id) NOT NULL,
+    house_id INTEGER NOT NULL REFERENCES houses(id) ON DELETE CASCADE,
     date_added timestamp default now()
 );
 
 CREATE TABLE employees (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    house_id INTEGER REFERENCES houses(id) NOT NULL
+    house_id INTEGER NOT NULL REFERENCES houses(id) ON DELETE CASCADE 
 );
 
 CREATE TABLE employee_reviews (
     id BIGSERIAL PRIMARY KEY,
     score INTEGER NOT NULL,
-    employee_id INTEGER REFERENCES employees(id) NOT NULL,
+    employee_id INTEGER NOT NULL REFERENCES employees(id) ON DELETE CASCADE,
     date_added timestamp default now()
 );
 
