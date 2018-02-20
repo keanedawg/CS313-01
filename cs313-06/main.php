@@ -15,7 +15,11 @@ $myDb = get_db();
 
 <div class="main"> 
     <h1>Welcome, click on any of the houses to get started!</h1>
-    <a href="writereview.php"><u>Click Here to write your own review!<u></a>
+    <ul>
+        <li><a href="writereview.php"><u>Click Here to write your own review!<u></a><br></li>
+        <li><a href="createhouse.php"><u>Click Here to add a new house!<u></a><br></li>
+        <li><a href="createemployee.php"><u>Click Here to add a new employee!<u></a><br></li>
+    </ul>
 </div>
 </body>
 </html>

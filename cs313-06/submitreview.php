@@ -28,7 +28,4 @@
     $stmt->bindValue(':recommended', $recommended, PDO::PARAM_BOOL);
     $stmt->bindValue(':commentary', $commentary, PDO::PARAM_STR);
     $stmt->execute();
-
-
-
 ?>
