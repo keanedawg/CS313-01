@@ -29,7 +29,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="main">
         <?php 
             if (empty($houseId)) {
-                require "writereview/empty.php"
+                require "writereview/empty.php";
             }
             else {
                 require "writereview/selected.php";
