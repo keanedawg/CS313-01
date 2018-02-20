@@ -4,6 +4,7 @@
 
     $houseId = $_POST["houseid"];
 
+    // Just in case no houseid is put in.
     if (empty($houseId)) {
         header("Location:house.php");
         exit;
