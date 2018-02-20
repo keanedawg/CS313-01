@@ -15,7 +15,23 @@ $myDb = get_db();
         require 'sidebar.php';
     ?>
     <div class="main">
-        <h1>Coming Soon!</h1>
+        <h1>Create a new employee</h1>
+        <form action="./submitemployee.php" method="get">
+            Name: <input required type="text" name="name"> 
+            <br>
+            Select House:
+            <select required name="houseid">
+                <?php
+                    foreach ($complexes as $complex) {
+                        $complexId = $complex["id"];
+                        $complexName = $complex["name"];
+                        echo "<option value=$complexId>$complexName</option>";
+                    }
+                ?>
+            </select> 
+            <br>
+            <input class="submit-review" type="submit" value="Create Employee!">
+        </form>
     </div>
 </body>
 </html>
