@@ -8,21 +8,21 @@ if (!isset($_SESSION["username"])) {
     exit();
 }
 
-if (isset($_SESSION["house"])) {
+if (isset($_GET["house"])) {
     $stmt = $myDb->prepare("DELETE FROM houses WHERE id = :theid ;");
-    $id = $_SESSION["house"];
+    $id = $_GET["house"];
 }
-else if (isset($_SESSION["house_review"])) {
+else if (isset($_GET["house_review"])) {
     $stmt = $myDb->prepare("DELETE FROM house_reviews WHERE id = :theid ;");
-    $id = $_SESSION["house_review"];
+    $id = $_GET["house_review"];
 }
-else if (isset($_SESSION["employee"])) {
+else if (isset($_GET["employee"])) {
     $stmt = $myDb->prepare("DELETE FROM employee WHERE id = :theid ;");
-    $id = $_SESSION["employee"];
+    $id = $_GET["employee"];
 }
-else if (isset($_SESSION["employee_review"])) {
+else if (isset($_GET["employee_review"])) {
     $stmt = $myDb->prepare("DELETE FROM employee_review WHERE id = :theid ;");
-    $id = $_SESSION["employee_review"];
+    $id = $_GET["employee_review"];
 }
 else {
     header("Location:adminHousing.php");
