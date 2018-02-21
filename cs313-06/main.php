@@ -19,6 +19,7 @@ $myDb = get_db();
         <li><a href="writereview.php"><u>Click Here to write your own review!<u></a><br></li>
         <li><a href="createhouse.php"><u>Click Here to add a new house!<u></a><br></li>
         <li><a href="createemployee.php"><u>Click Here to add a new employee!<u></a><br></li>
+        <li><a href="adminHousing.php"><u>Click Here to do administrative stuff.<u></a><br></li>
     </ul>
 </div>
 </body>

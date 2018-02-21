@@ -4,7 +4,7 @@ require('dbConnect.php');
 $myDb = get_db();
 
 if (!isset($_SESSION["username"])) {
-    header("Location: main.php");
+    header("Location: login.php");
     exit();
 }
 
