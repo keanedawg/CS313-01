@@ -5,7 +5,7 @@
     no  <input value=false name="recommended" type="radio">
     
     <br>
-    How would you rate it overall?<input required name="score" type="text"><br>   
+    How would you rate it overall (choose 1 - 5)?<input required name="score" type="text"><br>   
     <input required type="hidden" name="houseid" value="<?php echo $house["id"]; ?>">
     <p>Please explain your rating: </p>
     <textarea required name="commentary" form="review"></textarea>
@@ -16,7 +16,7 @@
             $name = $employee["name"];
             $id = $employee["id"];
             echo "<input type=\"hidden\" name=\"emp[]\" value=\"$id\">";
-            echo "$name : <input name=\"rating[]\ type=\"text\"><br>";
+            echo "$name (choose 1 - 5): <input name=\"rating[]\ type=\"text\"><br>";
         }
     ?>   
     <input class="submit-review" type="submit" value="Submit">
