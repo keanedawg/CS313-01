@@ -1,18 +1,22 @@
 <?php
 session_start();
+require('dbConnect.php');
+$myDb = get_db();
 
 if (!isset($_SESSION["username"])) {
     header("Location: main.php");
     exit();
 }
 
+$stmt = $myDb->prepare("SELECT id, name FROM employees;");
+$stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
+$stmt->execute();
+$employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
-?>
-
-<?php
-require('dbConnect.php');
-$myDb = get_db();
+$stmt = $myDb->prepare("SELECT id, name FROM employees;");
+$stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
+$stmt->execute();
+$employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +32,46 @@ $myDb = get_db();
     ?>
     <div class="main">
         <h1>Welcome <?php echo $_SESSION["username"];?></h1>
+        <h3>Delete House</h3>
+        <form>
+            <select name="house">
+                <?php
+                    foreach($complexes as $complex) {
+                        $complexId = $complex["id"];
+                        $complexName = $complex["name"];
+                        echo "<option value=$complexId>$complexName</option>";
+                    }
+                ?>
+            </select><br>
+            <input class="submit-delete" type="submit" value="Delete">
+        </form>
+        <hr>
+        <form>
+            <select name="employee_review">
+                <?php
+                    foreach($complexes as $complex) {
+                        $complexId = $complex["id"];
+                        $complexName = $complex["name"];
+                        echo "<option value=$complexId>$complexName</option>";
+                    }
+                ?>
+            </select><br>
+            <input class="submit-delete" type="submit" value="Delete">
+        </form>
+        <hr>
+        <form>
+            <select name="employee">
+                <?php
+                    foreach($complexes as $complex) {
+                        $complexId = $complex["id"];
+                        $complexName = $complex["name"];
+                        echo "<option value=$complexId>$complexName</option>";
+                    }
+                ?>
+            </select><br>
+            <input class="submit-delete" type="submit" value="Delete">
+        </form>
+        <hr>
     </div>
 </body>
 </html>
