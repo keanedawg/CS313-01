@@ -8,6 +8,8 @@ if (!isset($_SESSION["username"])) {
     exit();
 }
 
+var_dump($_GET);
+
 if (isset($_GET["house"])) {
     $stmt = $myDb->prepare("DELETE FROM houses WHERE id = :theid ;");
     $id = $_GET["house"];
@@ -17,11 +19,11 @@ else if (isset($_GET["house_review"])) {
     $id = $_GET["house_review"];
 }
 else if (isset($_GET["employee"])) {
-    $stmt = $myDb->prepare("DELETE FROM employee WHERE id = :theid ;");
+    $stmt = $myDb->prepare("DELETE FROM employees WHERE id = :theid ;");
     $id = $_GET["employee"];
 }
 else if (isset($_GET["employee_review"])) {
-    $stmt = $myDb->prepare("DELETE FROM employee_review WHERE id = :theid ;");
+    $stmt = $myDb->prepare("DELETE FROM employee_reviews WHERE id = :theid ;");
     $id = $_GET["employee_review"];
 }
 else {
@@ -32,6 +34,6 @@ $stmt->bindValue(':theid', $id, PDO::PARAM_INT);
 $stmt->execute();
 
 
-header("Location:adminHousing.php");
-exit();
+// header("Location:adminHousing.php");
+// exit();
 ?>
