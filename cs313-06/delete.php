@@ -34,6 +34,6 @@ $stmt->bindValue(':theid', $id, PDO::PARAM_INT);
 $stmt->execute();
 
 
-// header("Location:adminHousing.php");
-// exit();
+header("Location:adminHousing.php");
+exit();
 ?>
