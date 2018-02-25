@@ -1,0 +1,227 @@
+html,body { height:100%; }
+
+.top {
+    background-color: darkgreen;
+    position:absolute;
+    left:0; right:0;
+    height: 92px;
+    margin-top: -20px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 3px;
+}
+.left {
+    display: table-cell;
+    left:0; top:92px; bottom: 0;
+    width: 178px;
+    height: 100%;
+    border-right-style: solid;
+    border-right-color: black;
+    border-right-width: 3px;
+}
+.main {
+    display: table-cell;
+    padding-left: 10px;
+    left:178px; top:92px; right:0; bottom:0;
+    height: 100%;
+}
+
+.display-columns {
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin-top: 75px;
+}
+
+.main-links {
+    font-size: 30px;
+    list-style: none;
+    color: blue;
+}
+
+.main-links li {
+    margin-top: 10px;
+}
+
+.createemployee {
+    color: blue;
+}
+
+.yes {
+    margin-left: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: green;
+}
+
+.no {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: red;
+}
+
+.rating {
+    margin-left: 5px;
+    margin-top: 10px;
+    float:left;
+}
+.rating span { float:right; position:relative; }
+.rating span input {
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+.rating span label {
+    display:inline-block;
+    width:30px;
+    height:30px;
+    text-align:center;
+    color:#FFF;
+    background:#ccc;
+    font-size:30px;
+    margin-right:2px;
+    line-height:30px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+}
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+    background:#F90;
+    color:#FFF;
+}
+
+.submit-delete {
+    margin-top: 20px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    background-color: darkred;
+}
+
+.rate-employee-button {
+    background-color: darkgreen;
+    color: white;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+    width: 60px;
+}
+
+.rate-house-button {
+    background-color: darkgreen;
+    color: white;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-style: solid;
+    border-color: black;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    width: 200px;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    margin-top: 25px;
+}
+
+.house-main-title {
+    margin-top: 10px;
+    font-size: 40px;
+}
+
+.house-row {
+    padding-top: 6px;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.house-row:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+
+.house-row-title {
+    margin-top: 0px;
+    margin-left: 10px;
+    font-size: 24px;
+    margin-bottom: 2px;
+}
+
+.house-row-score {
+    margin-left: 10px;
+    margin-top: 2px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.house-row-empty {
+    margin-left: 10px;
+    margin-top: 2px;
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: rgba(0, 0, 0, .3);
+}
+
+img {
+    float: right;
+}
+
+.house-picture {
+    float: right;
+    height: 250px;
+    width: 250px;
+    margin-right: 100px;
+    border-style: solid;
+}
+
+/* I don't think I'll ever fully understand some of the fixes in CSS */
+.block-top {
+    background-color: darkgreen;
+    height: 1px;
+}
+
+.block {
+    height: 120px;
+}
+
+.home-nav {
+    margin-top: 10px;
+    height: 70px;
+    width: 100px;
+    float: left;
+    position: absolute;
+}
+
+.submit-review {
+    margin-top: 20px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    background-color: darkgreen;
+}
+
+.submit-review:disabled {
+    margin-top: 20px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    background-color: grey;
+}
+
+a {
+    color: inherit;
+    text-decoration: none; /* no underline */
+  }
