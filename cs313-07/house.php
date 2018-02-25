@@ -5,12 +5,12 @@ $myDb = get_db();
 
 $houseId = $_GET["house"];
 
-$stmt = $myDb->prepare("SELECT * FROM houses WHERE id = :theid ;");
+$stmt = $myDb->prepare("SELECT name, picture, address FROM houses WHERE id = :theid ;");
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $house = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$stmt = $myDb->prepare("SELECT * FROM house_reviews WHERE house_id = :theid ;");
+$stmt = $myDb->prepare("SELECT score, commentary, recommended FROM house_reviews WHERE house_id = :theid ;");
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -43,7 +43,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <ul>
 <?php
     if (empty($employees)) {
-        echo "<p>No Employee Reviews Currently :(</p>";
+        echo "<p>No Employees Currently :(</p>";
     }
     foreach ($employees as $employee)
     {
