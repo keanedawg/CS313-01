@@ -12,7 +12,7 @@
     position:absolute;
     left:0; top:100px; bottom: 0;
     width: 178px;
-    height: 150%;
+    height: 100%;
     margin-top: -8px;
     border-right-style: solid;
     border-right-color: black;
@@ -23,6 +23,16 @@
     position: absolute;
     left:178px; top:92px; right:0; bottom:0;
     height: 100%;
+}
+
+.main-links {
+    font-size: 30px;
+    list-style: none;
+    color: blue;
+}
+
+.main-links li {
+    margin-top: 10px;
 }
 
 .createemployee {
