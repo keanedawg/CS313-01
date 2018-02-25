@@ -12,7 +12,8 @@
     position:absolute;
     left:0; top:100px; bottom: 0;
     width: 178px;
-    height: 100%;
+    height: 150%;
+    margin-top: -8px;
     border-right-style: solid;
     border-right-color: black;
     border-right-width: 3px;
@@ -158,8 +159,18 @@
 
 img {
     float: right;
-    height: 300px;
-    width: 300px;
+}
+
+.house-picture {
+    float: right;
+    height: 250px;
+    width: 250px;
+    margin-right: 100px;
+    border-style: solid;
+}
+
+.block {
+    height: 120px;
 }
 
 .home-nav {

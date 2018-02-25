@@ -38,7 +38,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="main">
 <h2 class="house-main-title"><?php echo $house["name"]; ?></h2>
-<img src="<?php echo $house["picture"]; ?>">
+<img class="house-picture" src="<?php echo $house["picture"]; ?>">
 <p><?php echo $house["address"]; ?></p>
 <h3>Employee Reviews</h3>
 <ul>
@@ -61,36 +61,37 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 </ul>
 
+<div class="block"></div>
 <h3>House Reviews:</h3>
-	<ul>
-    <?php
-    if (empty($reviews)) {
-        echo "<p>No House Reviews Currently :(</p>";
-    }
-    else {
-        echo "<hr size=2>";
-    }
-    foreach ($reviews as $review)
-    {
-        $score = $review["score"];
-        $commentary = $review["commentary"];
-        $recommended = $review["recommended"];
-        echo "<p>Anon gave it a <b>$score</b> and ";
-        echo "would";
-        if ($recommended) {
-            echo " <b>recommend</b>";
+	<ul class="housereviews">
+        <?php
+        if (empty($reviews)) {
+            echo "<p>No House Reviews Currently :(</p>";
         }
         else {
-            echo " <b>not recommend</b>";
+            echo "<hr size=2>";
         }
-        echo " it to a friend.</p>";
-        
-        echo "<h3>Anon says: </h3>";
-        echo "<p>$commentary</p>";
-        echo "<hr size=2>";
-    }
-        echo "<a href=\"writereview.php?house=$houseId\"><div class=\"rate-house-button\">Rate It!</div></a>";
-    ?>
+        foreach ($reviews as $review)
+        {
+            $score = $review["score"];
+            $commentary = $review["commentary"];
+            $recommended = $review["recommended"];
+            echo "<p>Anon gave it a <b>$score</b> and ";
+            echo "would";
+            if ($recommended) {
+                echo " <b>recommend</b>";
+            }
+            else {
+                echo " <b>not recommend</b>";
+            }
+            echo " it to a friend.</p>";
+            
+            echo "<h3>Anon says: </h3>";
+            echo "<p>$commentary</p>";
+            echo "<hr size=2>";
+        }
+            echo "<a href=\"writereview.php?house=$houseId\"><div class=\"rate-house-button\">Rate It!</div></a>";
+        ?>
     </ul>
 </div>
 </main>
