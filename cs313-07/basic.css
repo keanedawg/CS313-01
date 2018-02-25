@@ -24,6 +24,22 @@
     height: 100%;
 }
 
+.createemployee {
+    color: blue;
+}
+
+.yes {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: green;
+}
+
+.no {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: red;
+}
+
 .submit-delete {
     margin-top: 20px;
     height: 40px;
