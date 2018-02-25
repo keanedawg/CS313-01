@@ -22,10 +22,10 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="basic.css">
 </head>
 <body>
-    <?php 
-        require 'header.php';
-        require 'sidebar.php';
-    ?>
+<div class="block-top"></div>
+    <?php require 'header.php'; ?>
+    <div class="display-columns">
+    <?php require 'sidebar.php';?>
     <div class="main">
         <?php 
             // It's easier to handle the separate cases if I break my code this way
@@ -36,6 +36,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 require "writereview/selected.php";
             }
         ?>
+    </div>
     </div>
 </body>
 </html>

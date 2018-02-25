@@ -12,12 +12,13 @@ $myDb = get_db();
     <link rel="stylesheet" href="basic.css">
 </head>
 <body>
-    <?php 
-        require 'header.php';
-        require 'sidebar.php';
-    ?>
+    <div class="block-top"></div>
+    <?php require 'header.php'; ?>
+    <div class="display-columns">
+    <?php require 'sidebar.php';?>
     <div class="main">
         <h1>Coming Soon!</h1>
+    </div>
     </div>
 </body>
 </html>

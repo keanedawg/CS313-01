@@ -31,11 +31,10 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 
-<?php 
-    require 'header.php';
-    require 'sidebar.php';
-?>
-
+<div class="block-top"></div>
+<?php require 'header.php'; ?>
+<div class="display-columns">
+<?php require 'sidebar.php';?>
 <div class="main">
 <h2 class="house-main-title"><?php echo $house["name"]; ?></h2>
 <img class="house-picture" src="<?php echo $house["picture"]; ?>">
@@ -94,6 +93,6 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
     </ul>
 </div>
-</main>
+</div>
 </body>
 </html>

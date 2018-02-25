@@ -31,10 +31,10 @@ $ereviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="basic.css">
 </head>
 <body>
-    <?php 
-        require 'header.php';
-        require 'sidebar.php';
-    ?>
+    <div class="block-top"></div>
+    <?php require 'header.php'; ?>
+    <div class="display-columns">
+    <?php require 'sidebar.php';?>
     <div class="main">
         <h1>Welcome <?php echo $_SESSION["username"];?></h1>
         <h3>Delete House</h3>
@@ -97,6 +97,7 @@ $ereviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </select><br>
             <input class="submit-delete" type="submit" value="Delete">
         </form>
+    </div>
     </div>
 </body>
 </html>
