@@ -23,14 +23,18 @@ $house = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="display-columns">
     <?php require 'sidebar.php';?>
     <div class="main">
-        <h1>Edit  house</h1>
-        <form action="./submitHouse.php" method="post">
+        <h1>Edit <?php echo $house["name"]; ?></h1>
+        <form action="./submitEdit.php" method="post">
             <?php
-                echo "Name: <input required value= type=\"text\" name=\"name\">
+                $name = $house["name"];
+                $address = $house["address"];
+                $picture = $house["picture"];
+                echo "Name: <input required value=\"$name\" type=\"text\" name=\"name\">
                     <br>
-                    Address: <input required value= type=\"text\" name=\"address\">
+                    Address: <input required value=\"$address\" type=\"text\" name=\"address\">
                     <br>
-                    Picture Address (optional): <input value= type=\"text\" name=\"picture\"> 
+                    Picture Address: <input value=\"$picture\" type=\"text\" name=\"picture\"> 
+                    <input required value=\"$houseId\" type=\"hidden\" name=\"house\">
                     <br>
                     <br>";
             ?>
