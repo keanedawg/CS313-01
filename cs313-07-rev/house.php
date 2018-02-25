@@ -39,6 +39,7 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <h2 class="house-main-title"><?php echo $house["name"]; ?></h2>
 <img class="house-picture" src="<?php echo $house["picture"]; ?>">
 <p><?php echo $house["address"]; ?></p>
+<a class="linkblue" href="editHousing.php?house=<?php echo $houseId; ?>"> Click here to revise info about this housing complex.</a><br>
 <h3>Employee Reviews</h3>
 <ul>
 <?php

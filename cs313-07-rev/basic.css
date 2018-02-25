@@ -47,6 +47,11 @@ html,body { height:100%; }
     color: blue;
 }
 
+.linkblue {
+    color: blue;
+    text-decoration: underline;
+}
+
 .yes {
     margin-left: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
