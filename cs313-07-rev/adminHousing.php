@@ -9,17 +9,18 @@ if (!isset($_SESSION["username"])) {
 }
 
 $stmt = $myDb->prepare("SELECT id, name FROM employees;");
-$stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
 $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt = $myDb->prepare("SELECT id, house_id, commentary FROM house_reviews;");
-$stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
+$stmt = $myDb->prepare("SELECT house_reviews.id, name, house_id, score, commentary FROM house_reviews
+INNER JOIN (SELECT id, name FROM houses) AS foo
+ON house_reviews.house_id = foo.id;");
 $stmt->execute();
 $hreviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt = $myDb->prepare("SELECT * FROM employee_reviews;");
-$stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
+$stmt = $myDb->prepare("SELECT name, employee_reviews.id, score, employee_id FROM employee_reviews
+INNER JOIN (SELECT id, name FROM employees) AS foo
+ON employee_reviews.employee_id = foo.id;");
 $stmt->execute();
 $ereviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -53,14 +54,15 @@ $ereviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <hr>
         <h3>Delete House Review</h3>
         <form action="delete.php" method="GET">
-            houseid - commentary
+            House Reviews
             <select name="house_review">
                 <?php
                     foreach($hreviews as $hreview) {
                         $rId = $hreview["id"];
-                        $rHid = $hreview["house_id"];
+                        $rName = $hreview["name"];
+                        $rScore = $hreview["score"];
                         $rCommentary = $hreview["commentary"];
-                        echo "<option value=$rId>$rHid - $rCommentary</option>";
+                        echo "<option value=$rId>$rName - $rScore stars - $rCommentary</option>";
                     }
                 ?>
             </select><br>
@@ -84,14 +86,14 @@ $ereviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <hr>
         <h3>Delete Employee Review</h3>
         <form action="delete.php" method="GET">
-            employeeId - Review Score
+            Employee Reviews
             <select name="employee_review">
                 <?php
                     foreach($ereviews as $ereview) {
                         $erevId = $ereview["id"];
-                        $erevEmpId = $ereview["employee_id"];
                         $erevScore = $ereview["score"];
-                        echo "<option value=$erevId>$erevEmpId - $erevScore</option>";
+                        $erevName = $ereview["name"];
+                        echo "<option value=$erevId>$erevName - $erevScore</option>";
                     }
                 ?>
             </select><br>
