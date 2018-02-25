@@ -16,7 +16,7 @@ $stmt->execute();
 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $stmt = $myDb->prepare("SELECT * FROM employees
-LEFT JOIN (SELECT employee_id, trunc(avg( score ), 1) FROM employee_reviews GROUP BY employee_id) AS foo
+LEFT JOIN (SELECT employee_id, trunc(avg( score ), 1), count( score ) FROM employee_reviews GROUP BY employee_id) AS foo
 ON employees.id = foo.employee_id WHERE employees.house_id = :theid;");
 $stmt->bindValue(':theid', $houseId, PDO::PARAM_INT);
 $stmt->execute();
@@ -49,12 +49,13 @@ $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
     {
         $name = $employee["name"];
         $avg = $employee["trunc"];
+        $count = $employee["count"];
         echo "<li>$name - ";
         if (empty($employee["trunc"])) {
             echo "N/A</li>";
         }
         else {
-            echo "$avg</li>";
+            echo "$avg ($count reviews)</li>";
         }
     }
 ?>
