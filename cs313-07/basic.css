@@ -41,8 +41,9 @@
 }
 
 .rating {
+    margin-left: 5px;
+    margin-top: 10px;
     float:left;
-    width:300px;
 }
 .rating span { float:right; position:relative; }
 .rating span input {

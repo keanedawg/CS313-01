@@ -23,14 +23,16 @@ $(document).ready(function(){
     <span class="no">no</span>  <input value=false name="recommended" type="radio">
     
     <br>
-    How would you rate it overall?<input required name="score" type="text">
     <div class="rating">
-        <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
-        <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
-        <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
-        <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
-        <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+        <span><input type="radio" name="score" id="str5" value="5"><label for="str5"></label></span>
+        <span><input type="radio" name="score" id="str4" value="4"><label for="str4"></label></span>
+        <span><input type="radio" name="score" id="str3" value="3"><label for="str3"></label></span>
+        <span><input type="radio" name="score" id="str2" value="2"><label for="str2"></label></span>
+        <span><input type="radio" name="score" id="str1" value="1"><label for="str1"></label></span>
     </div>  
+    
+    <br>
+    <br>
     <input required type="hidden" name="houseid" value="<?php echo $house["id"]; ?>">
     <p>Please explain your rating: </p>
     <textarea required name="commentary" form="review"></textarea>
