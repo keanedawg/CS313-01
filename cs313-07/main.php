@@ -10,7 +10,9 @@ $myDb = get_db();
 </head>
 <body>
 
+<div class="block-top"></div>
 <?php require 'header.php'; ?>
+<div class="display-columns">
 <?php require 'sidebar.php'; ?>
 
 <div class="main"> 
@@ -21,6 +23,7 @@ $myDb = get_db();
         <li><a href="createemployee.php"><u>Click Here to add a new employee!<u></a><br></li>
         <li><a href="adminHousing.php"><u>Click Here to do administrative stuff.<u></a><br></li>
     </ul>
+</div>
 </div>
 </body>
 </html>
