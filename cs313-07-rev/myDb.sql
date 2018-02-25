@@ -64,8 +64,9 @@ INSERT INTO employee_reviews (score, employee_id) values (4, 1);
 INSERT INTO employee_reviews (score, employee_id) values (2, 3);
 
 
+/*Permissions, only useful in localhost*/
 CREATE USER reader_viewer WITH PASSWORD '123456';
-GRANT SELECT, DELETE, INSERT ON ALL TABLES IN SCHEMA public TO reader_viewer;
+GRANT SELECT, UPDATE, DELETE, INSERT ON ALL TABLES IN SCHEMA public TO reader_viewer;
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO reader_viewer;
 
 
