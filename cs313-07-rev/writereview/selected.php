@@ -23,13 +23,15 @@ $(document).ready(function(){
     <span class="no">no</span>  <input value=false name="recommended" type="radio">
     
     <br>
-    How would you rate it overall?<br>
+    How would you rate it overall? <br>
+    (1 circle = the worst, 5 circles = the best) <br>
+
     <div class="rating">
-        <span><input type="radio" name="score" id="str5" value="5"><label for="str5"></label></span>
-        <span><input type="radio" name="score" id="str4" value="4"><label for="str4"></label></span>
-        <span><input type="radio" name="score" id="str3" value="3"><label for="str3"></label></span>
-        <span><input type="radio" name="score" id="str2" value="2"><label for="str2"></label></span>
-        <span><input type="radio" name="score" id="str1" value="1"><label for="str1"></label></span>
+        <span><input required type="radio" name="score" id="str5" value="5"><label for="str5"></label></span>
+        <span><input required type="radio" name="score" id="str4" value="4"><label for="str4"></label></span>
+        <span><input required type="radio" name="score" id="str3" value="3"><label for="str3"></label></span>
+        <span><input required type="radio" name="score" id="str2" value="2"><label for="str2"></label></span>
+        <span><input required type="radio" name="score" id="str1" value="1"><label for="str1"></label></span>
     </div>  
     
     <br>
@@ -46,8 +48,14 @@ $(document).ready(function(){
             {
                 $name = $employee["name"];
                 $id = $employee["id"];
-                echo "<input type=\"hidden\" name=\"emp[]\" value=\"$id\">";
-                echo "$name (choose 1 - 5): <input name=\"rating[]\ type=\"text\"><br>";
+                echo "$name (choose 1 - 5):";
+                echo '<div class="something">
+                    <span><input type="radio" name="rating[' . $id . '][]" value="1"></span>
+                    <span><input type="radio" name="rating[' . $id . '][]" value="2"></span>
+                    <span><input type="radio" name="rating[' . $id . '][]" value="3"></span>
+                    <span><input type="radio" name="rating[' . $id . '][]" value="4"></span>
+                    <span><input type="radio" name="rating[' . $id . '][]" value="5"></span>
+                </div> <br>';
             }
         }
         else {

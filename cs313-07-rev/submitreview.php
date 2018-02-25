@@ -30,15 +30,11 @@
         $stmt->bindValue(':commentary', $commentary, PDO::PARAM_STR);
         $stmt->execute();
 
+    foreach ($_POST["rating"] as $index=>$value) {
         $stmt = $myDb->prepare("INSERT INTO employee_reviews (score, employee_id) VALUES (:rating, :empid)");
-        foreach ($_POST["emp"] as $index=>$empId) {
-            $rating = $_POST["rating"][$index];
-            if (empty($rating)) {
-                continue;
-            }
-            $stmt->bindValue(':rating', $rating, PDO::PARAM_INT);
-            $stmt->bindValue(':empid', $empId, PDO::PARAM_INT);
-            $stmt->execute();
+           $stmt->bindValue(':rating', $value[0], PDO::PARAM_INT);
+           $stmt->bindValue(':empid', $index, PDO::PARAM_INT);
+           $stmt->execute();
         }
         $myDb->commit();
     }
