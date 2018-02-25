@@ -23,6 +23,7 @@ $(document).ready(function(){
     <span class="no">no</span>  <input value=false name="recommended" type="radio">
     
     <br>
+    How would you rate it overall?<br>
     <div class="rating">
         <span><input type="radio" name="score" id="str5" value="5"><label for="str5"></label></span>
         <span><input type="radio" name="score" id="str4" value="4"><label for="str4"></label></span>
@@ -39,7 +40,7 @@ $(document).ready(function(){
     
     
     <?php
-        echo '<h2>(Optional) How would you rate their staff?</h2>';
+        echo '<h4>(Optional) How would you rate their staff?</h4>';
         if (!empty($employees)) { 
             foreach ($employees as $employee)
             {
