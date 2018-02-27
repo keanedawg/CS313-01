@@ -64,6 +64,8 @@ INSERT INTO employee_reviews (score, employee_id) values (4, 1);
 INSERT INTO employee_reviews (score, employee_id) values (2, 3);
 
 
+INSERT INTO users (username, password) VALUES ('admin', '$2y$10$slEatXJoBrYjlHwjLfDR3.Uc9WfW5n2TD08W4RHzwvaVAVhYmUuuC');
+
 CREATE USER reader_viewer WITH PASSWORD '123456';
 GRANT SELECT, DELETE, INSERT ON ALL TABLES IN SCHEMA public TO reader_viewer;
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO reader_viewer;
